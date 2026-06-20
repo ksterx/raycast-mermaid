@@ -11,7 +11,6 @@
     {
       "name": "render-mermaid",
       "title": "Render Mermaid from Clipboard",
-      "subtitle": "Mermaid",
       "description": "Read Mermaid code from the clipboard and render it as a diagram.",
       "mode": "view"
     }
@@ -39,14 +38,19 @@
     "pako": "^2.1.0"
   },
   "devDependencies": {
+    "@raycast/eslint-config": "^2.0.4",
     "@types/node": "22.13.10",
     "@types/pako": "^2.0.3",
     "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
     "typescript": "^5.8.2"
   },
   "scripts": {
     "build": "ray build",
     "dev": "ray develop",
+    "lint": "ray lint",
+    "fix-lint": "ray lint --fix",
     "publish": "npx @raycast/api@latest publish"
   }
 }
