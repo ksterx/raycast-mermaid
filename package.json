@@ -1,18 +1,19 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "mermaid-clipboard",
-  "title": "Mermaid Clipboard",
-  "description": "Render a Mermaid diagram from your clipboard.",
+  "name": "clipboard-renderer",
+  "title": "Clipboard Renderer",
+  "description": "Render Mermaid, LaTeX, and more from your clipboard. LaTeX renders locally; Mermaid uses a local mmdc when available, else mermaid.ink.",
   "icon": "extension-icon.png",
   "author": "ksterx",
   "categories": ["Developer Tools"],
   "license": "MIT",
   "commands": [
     {
-      "name": "render-mermaid",
-      "title": "Render Mermaid from Clipboard",
-      "description": "Read Mermaid code from the clipboard and render it as a diagram.",
-      "mode": "view"
+      "name": "render-from-clipboard",
+      "title": "Render from Clipboard",
+      "description": "Detect Mermaid code or a LaTeX math expression on the clipboard and render it.",
+      "mode": "view",
+      "keywords": ["mermaid", "latex", "math", "diagram", "render"]
     }
   ],
   "preferences": [
@@ -30,6 +31,13 @@
         { "title": "Neutral", "value": "neutral" },
         { "title": "Forest", "value": "forest" }
       ]
+    },
+    {
+      "name": "mermaidCliPath",
+      "title": "Local Mermaid CLI",
+      "description": "Optional override. mmdc (@mermaid-js/mermaid-cli) is auto-detected on your PATH; set this to its absolute path only if detection fails. When a local mmdc is used, Mermaid is rendered on-device and nothing leaves your machine. Find the path with `which mmdc`.",
+      "type": "textfield",
+      "required": false
     }
   ],
   "dependencies": {
